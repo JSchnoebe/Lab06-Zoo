@@ -27,6 +27,10 @@ namespace Zoo
 
             Console.WriteLine("--------------------");
 
+            Snake snk = new Snake("Cobra");
+            snk.Color = "Black";
+            snk.PrintSummary();
+
 
             Console.WriteLine("Mammals!");
             Mammal[] mammal = new Mammal[]
@@ -34,6 +38,12 @@ namespace Zoo
                 dog,
                 new Cow("Dairy Cow"),
                 new Cow("Beef Cow"),
+
+            };
+
+            Reptile[] reptile = new Reptile[]
+            {
+                snk,
 
             };
         }
@@ -64,6 +74,20 @@ namespace Zoo
         public virtual bool HaveFur { get; }
 
         public Mammal(string species)
+        {
+            Species = species;
+        }
+    }
+
+    abstract class Reptile : Animal
+    {
+        public virtual int LegCount { get { return 4; } }
+
+        public virtual bool HaveSharpTeeth { get; }
+
+        public virtual bool HaveScales { get; }
+
+        public Reptile(string species)
         {
             Species = species;
         }

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Zoo
 {
-    public class Chameleon
+    class Chameleon
     {
         public Chameleon()
         {
